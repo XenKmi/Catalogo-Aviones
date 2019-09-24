@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="flexboxgrid.min">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Crear Cuenta</title>
+</head>
+
+<body>
+
+    <ul class="menu">
+        <li><a href="Home.html" class="col-xs-12 col-sm-4">Home</a></li>
+        <li>
+            <a href="Aviones-comerciales.html" class="col-xs-12 col-sm-4">Aviones comerciales</a>
+        </li>
+        <li><a href="Jet-privados.html" class="col-xs-12 col-sm-4">Jet privados</a></li>
+        <li><a href="#" class="col-xs-12 col-sm-4">Contáctenos </a>
+            <ul class="submenu">
+                <li><a href="#">Whatsapp +56 9 85412598</a> </li>
+                <li><a href="https://www.facebook.com">Facebook</a></li>
+                <li><a href="https://twitter.com">Twitter</a></li>
+            </ul>
+            <li><a href="Login.html" class="col-xs-12 col-sm-4">Login</a></li>
+        </li>
+    </ul>
+
+    <div class="crear-cuenta">
+        <img class="avatar" src="img/logasd.png" alt="Logosd">
+        <h1>Crear Cuenta</h1>
+        <form action="Home.html" method="POST" id="cuenta">
+
+            <!--USERNAME-->
+            <label class="correo" for="correo">Correo</label>
+            <input type="email" id="correo" name="correo" placeholder="Correo electrónico" onblur="validateMail(correo,erroremail)">
+            <div id="erroremail" style="display: none">Error, ingrese un correo valido </div>
+
+            <!--Password-->
+
+            <label class="password" for="password">Contraseña</label>
+            <input type="password" placeholder="Contraseña">
+			<div id="errorcontra" style="display: none">Error, ingrese una constraseña de 6 caracteres minimos </div>
+
+            <label class="confirmacion" for="confirmacion">Confirmación</label>
+            <input type="password" placeholder="Contraseña">
+			<div id="errorconfi" style="display: none">Error, ingrese la misma contraseña </div>
+
+            <!--Telefono-->
+
+            <label class="telefono" id="fono" for="telefono" onblur="validarNumero()">Teléfono</label>
+            <input type="number" placeholder="Teléfono">
+			<div id="errorfono" style="display: none">Error, solo numeros  </div>
+
+            <!--Iniciar sesión-->
+
+            <input type="submit" value="Iniciar Sesión" onclick="mostrar(error)"><br>
+
+        </form>
+
+        <form action="Login.html">
+
+            <!--Volver-->
+
+            <input type="submit" value="Volver">
+
+        </form>
+
+
+
+
+    </div>
+    <script src="/js/Scripts.js"></script>
+</body>
+
+</html>

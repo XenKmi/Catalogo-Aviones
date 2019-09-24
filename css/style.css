@@ -1,0 +1,454 @@
+    html {
+        height: 100%;
+    }
+    
+    body {
+        background: -webkit-linear-gradient(rgba(5, 610, 255, 0.4), rgba(135, 60, 255, 0.0) 80%), -webkit-linear-gradient(-45deg, rgba(120, 155, 255, 0.9) 25%, rgba(255, 160, 65, 0.9) 76%);
+    }
+    
+    .menu {
+        list-style: none;
+        margin: 50px auto;
+        width: 800px;
+        width: fit-content;
+    }
+    
+    .menu>li {
+        background: #34495e;
+        float: left;
+        position: relative;
+        transform: skewX(25deg);
+    }
+    
+    .menu a {
+        display: block;
+        color: #fff;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-family: Arial, Helvetica;
+        font-size: 14px;
+    }
+    
+    .menu li:hover {
+        background: #e74c3c;
+    }
+    
+    .menu>li>a {
+        transform: skewX(-25deg);
+        padding: 1em 2em;
+    }
+    /* Dropdown */
+    
+    .submenu {
+        position: absolute;
+        width: 200px;
+        left: 50%;
+        margin-left: -100px;
+        transform: skewX(-25deg);
+        transform-origin: left top;
+    }
+    
+    .submenu li {
+        background-color: #34495e;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .submenu>li>a {
+        padding: 1em 2em;
+    }
+    
+    .submenu>li::after {
+        content: '';
+        position: absolute;
+        top: -125%;
+        height: 100%;
+        width: 100%;
+        box-shadow: 0 0 50px rgba(0, 0, 0, .9);
+    }
+    /* Odd stuff */
+    
+    .submenu>li:nth-child(odd) {
+        transform: skewX(-25deg) translateX(0);
+    }
+    
+    .submenu>li:nth-child(odd)>a {
+        transform: skewX(25deg);
+    }
+    
+    .submenu>li:nth-child(odd)::after {
+        right: -50%;
+        transform: skewX(-25deg) rotate(3deg);
+    }
+    /* Even stuff */
+    
+    .submenu>li:nth-child(even) {
+        transform: skewX(25deg) translateX(0);
+    }
+    
+    .submenu>li:nth-child(even)>a {
+        transform: skewX(-25deg);
+    }
+    
+    .submenu>li:nth-child(even)::after {
+        left: -50%;
+        transform: skewX(25deg) rotate(3deg);
+    }
+    /* Show dropdown */
+    
+    .submenu,
+    .submenu li {
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+    .submenu li {
+        transition: .2s ease -webkit-transform;
+    }
+    
+    .menu>li:hover .submenu,
+    .menu>li:hover .submenu li {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .menu>li:hover .submenu li:nth-child(even) {
+        transform: skewX(25deg) translateX(15px);
+    }
+    
+    .menu>li:hover .submenu li:nth-child(odd) {
+        transform: skewX(-25deg) translateX(-15px);
+    }
+    
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+    
+    body {
+        margin: 10px;
+        background-image: url(../img/4k.jpg);
+        background-size: 100vw 100vh;
+        background-attachment: fixed;
+        animation: movimiento 10s infinite linear alternate;
+        background-size: 120%;
+    }
+    
+    @keyframes movimiento {
+        from {
+            background-position: bottom left;
+        }
+        to {
+            background-position: top right;
+        }
+    }
+    
+    @media(max-width:480px) {}
+    
+    .linea {
+        border-top: 5px solid transparent;
+        margin-bottom: 195px;
+    }
+    
+    .contenedor-imagenes {
+        display: flex;
+        width: 85%;
+        margin: auto;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        border-radius: 3px;
+    }
+    
+    .contenedor-imagenes .imagen {
+        width: 32%;
+        position: relative;
+        height: 250px;
+        margin-bottom: 5px;
+        box-shadow: 0px 0px 3px 0px rgb(0, 0, 0, .75);
+        margin-bottom: 11px;
+    }
+    
+    .imagen img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .overlay {
+        position: absolute;
+        background: rgba(0, 118, 192, 0.781);
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        height: 0%;
+        transition: .45s ease;
+        overflow: hidden;
+    }
+    
+    .overlay h2 {
+        color: #ffffff;
+        font-weight: 300;
+        font-size: 30px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        text-align: center;
+        transform: translate(-50%, -50%);
+    }
+    
+    .imagen:hover .overlay {
+        height: 100%;
+        cursor: pointer;
+    }
+    
+    .login-box {
+        background: rgba(0, 5, 4, 0.8);
+        border-radius: 50px;
+        color: #fff;
+        top: 66%;
+        left: 48%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        box-sizing: border-box;
+        padding: 70px 30px;
+    }
+    
+    .login-box .avatar {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: -50px;
+        left: calc(50% - 50px);
+        border-radius: 50%;
+    }
+    
+    .login-box h1 {
+        margin: 0;
+        padding: 0 0 20px;
+        text-align: center;
+        font-size: 22px;
+        font-family: sans-serif;
+    }
+    
+    .login-box label {
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+        display: block;
+    }
+    
+    .login-box input {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .login-box .correo {
+        font-family: sans-serif;
+    }
+    
+    .login-box .password {
+        font-family: sans-serif;
+    }
+    
+    .login-box input[type="text"],
+    .login-box input[type="password"] {
+        border: none;
+        border-bottom: 1px solid #fff;
+        background: transparent;
+        outline: none;
+        height: 40px;
+        color: #fff;
+        font-size: 13px;
+        font-family: sans-serif;
+    }
+    
+    .login-box input:hover[type="text"],
+    .login-box input:hover[type="password"] {
+        border-bottom: 1px solid rgba(6, 237, 245, 0.9);
+        ;
+    }
+    
+    .login-box input[type="submit"] {
+        border: none;
+        outline: none;
+        height: 30px;
+        background: #fff;
+        border-radius: 300px;
+        font-family: sans-serif;
+    }
+    
+    .login-box input:hover[type="submit"] {
+        background: rgba(6, 237, 245, 0.9);
+        cursor: pointer;
+    }
+    
+    .login-box a {
+        text-decoration: none;
+        font-size: 17.1px;
+        line-height: 20px;
+        color: #fff;
+        font-family: sans-serif;
+    }
+    
+    .login-box a:hover {
+        color: rgba(6, 237, 245, 0.9);
+    }
+    
+    .crear-cuenta {
+        background: rgba(0, 5, 4, 0.8);
+        border-radius: 50px;
+        color: #fff;
+        top: 66%;
+        left: 48%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        box-sizing: border-box;
+        padding: 70px 30px;
+    }
+    
+    .crear-cuenta .avatar {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: -50px;
+        left: calc(50% - 50px);
+        border-radius: 50%;
+    }
+    
+    .crear-cuenta h1 {
+        margin: 0;
+        padding: 0 0 20px;
+        text-align: center;
+        font-size: 22px;
+        font-family: sans-serif;
+    }
+    
+    .crear-cuenta label {
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+        display: block;
+    }
+    
+    .crear-cuenta input {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .crear-cuenta .correo {
+        font-family: sans-serif;
+    }
+    
+    .crear-cuenta .password {
+        font-family: sans-serif;
+    }
+    
+    .crear-cuenta input[type="text"],
+    .crear-cuenta input[type="email"],
+    .crear-cuenta input[type="number"],
+    .crear-cuenta input[type="password"] {
+        border: none;
+        border-bottom: 1px solid #fff;
+        background: transparent;
+        outline: none;
+        height: 40px;
+        color: #fff;
+        font-size: 13px;
+        font-family: sans-serif;
+    }
+    
+    .crear-cuenta input:hover[type="text"],
+    .crear-cuenta input:hover[type="password"] {
+        border-bottom: 1px solid rgba(6, 237, 245, 0.9);
+        ;
+    }
+    
+    .crear-cuenta input[type="submit"] {
+        border: none;
+        outline: none;
+        height: 30px;
+        background: #fff;
+        border-radius: 300px;
+        font-family: sans-serif;
+    }
+    
+    .crear-cuenta input:hover[type="submit"] {
+        background: rgba(6, 237, 245, 0.9);
+        cursor: pointer;
+    }
+    
+    .crear-cuenta a {
+        text-decoration: none;
+        font-size: 17.1px;
+        line-height: 20px;
+        color: #fff;
+        font-family: sans-serif;
+    }
+    
+    .crear-cuenta a:hover {
+        color: rgba(6, 237, 245, 0.9);
+    }
+    
+    @media (max-width:480px) {
+        form {
+            width: 100%;
+        }
+    }
+    
+    .pageWidth {
+        border-radius: 50px;
+        color: #fff;
+        top: 41%;
+        left: 28%;
+        position: absolute;
+        box-sizing: border-box;
+    }
+    
+    .dasd {
+        border-radius: 10%;
+        width: 580px;
+    }
+    
+    .pageContent {
+        background: rgba(0, 5, 4, 0.8);
+        border-radius: 50px;
+        color: #fff;
+        position: absolute;
+        box-sizing: border-box;
+        padding: 50px 110px;
+        text-align: center;
+    }
+    
+    .pageDesc {
+        border-radius: 50px;
+        color: #fff;
+        box-sizing: border-box;
+    }
+    
+    .desc {
+        background: rgba(0, 5, 4, 0.8);
+        border-radius: 50px;
+        color: #fff;
+        position: absolute;
+        padding: 50px 110px;
+        text-align: center;
+        top: 25%;
+        left: -0.10;
+        margin: 20px 1000px 5px 80px;
+        right: -900px;
+    }
+    
+    .linea2 {
+        border-bottom: 1px solid #fff;
+        margin: 30px;
+    }
+    
+    @media (max-width:480px) {
+        .pageWidth {
+            width: 100%;
+        }
+        .pageDesc {
+            width: 100%;
+        }
+    }
